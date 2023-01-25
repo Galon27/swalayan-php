@@ -1,0 +1,8 @@
+::-webkit-scrollbar{
+    display: none;
+}
+
+#headere {
+    position: sticky;
+    color: aqua;
+}
