@@ -2,7 +2,7 @@
 error_reporting(0);
 session_start();
 if ($_SESSION['status'] == "login") {
-    header("location:admin.php");
+    header("location:admin.php?page=dashboard");
 }
 ?>
 
@@ -13,8 +13,6 @@ if ($_SESSION['status'] == "login") {
     <title>TEST</title>
     <link rel="stylesheet" type="text/css" href="style/login.css">
     <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 </head>
 
 <body>
@@ -31,11 +29,22 @@ if ($_SESSION['status'] == "login") {
                     <?php
                     if (isset($_GET['pesan'])) {
                         if ($_GET['pesan'] == "gagal") {
-                            echo "<script>swal('Good job!', 'You clicked the button!', 'error');</script>";
+                            echo "
+                            <script>
+                            </script>
+                            ";
                         } else if ($_GET['pesan'] == "logout") {
-                            echo "<script></script>";
+                            echo "
+                            <div class='alert alert-warning' role='alert'>
+                                Anda telah berhasil logout
+                            </div>
+                            ";
                         } else if ($_GET['pesan'] == "belum_login") {
-                            echo "Anda harus login untuk mengakses halaman admin";
+                            echo "
+                            <div class='alert alert-success' role='alert'>
+                                Anda harus login untuk mengakses halaman admin
+                            </div>
+                            ";
                         }
                     }
                     ?>
@@ -77,6 +86,7 @@ if ($_SESSION['status'] == "login") {
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" style="position: absolute; top:-1px; right:2px; z-index:-50; width: 2300px;">
         <path fill="#5000ca" fill-opacity="1.1" d="M0,288L48,261.3C96,235,192,181,288,165.3C384,149,480,171,576,160C672,149,768,107,864,80C960,53,1056,43,1152,69.3C1248,96,1344,160,1392,192L1440,224L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path>
     </svg>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 
 </html>

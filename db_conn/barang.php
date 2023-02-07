@@ -35,6 +35,15 @@ switch($aksi){
   case 'delete':
     $id_barang = $_GET['id_barang'];
     $query = mysqli_query($koneksi,"DELETE FROM barang WHERE id_barang = '$id_barang'");
+    if ($query) {
+      $filename = $_FILES['gambar']['name'];
+      $newfilename = $rand.'_'.$filename;  
+      unlink($newfilename);
+  
+      echo "Barang dan gambar berhasil dihapus.";
+  } else {
+      echo "Error menghapus barang: " . mysqli_error($conn);
+  }
     header("location:../admin.php?page=barang");
     break;
     }
