@@ -238,6 +238,8 @@ if ($_SESSION['status'] != "login") {
             </div>
     </div>
 
+
+
     <script>
         function Logout(url) {
             Swal.fire({
@@ -261,6 +263,8 @@ if ($_SESSION['status'] != "login") {
             })
         }
     </script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <lottie-player src="https://assets8.lottiefiles.com/packages/lf20_opea6x2q.json" background="transparent" speed="1" style="width: 2000px; height: 1000px; z-index:-10; position:absolute; top:0px; left:40px" loop autoplay></lottie-player>
 
     <script src="assets/js/bootstrap.js"></script>
     <script src="assets/js/app.js"></script>

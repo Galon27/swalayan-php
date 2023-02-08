@@ -1,12 +1,7 @@
 <div class="page-heading">
     <div class="page-title">
         <div class="row">
-            <div class="col-12 col-md-6 order-md-1 order-last">
-                <h3>Data Transaksi.</h3>
-                <p class="text-subtitle text-muted">
-                </p>
-            </div>
-            <div class="col-12 col-md-6 order-md-2 order-first">
+            <div class="col-12 me-3 order-md-2 order-first">
                 <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item">
@@ -17,6 +12,14 @@
                         </li>
                     </ol>
                 </nav>
+            </div>
+        </div>
+        <div class="col-12 order-md-1 order-last">
+            <div class="card">
+                <h3 class="pb-3 pt-4 ps-3">Data Transaksi.</h3>
+                <div class="col-sm-2 d-inline">
+
+                </div>
             </div>
         </div>
     </div>
@@ -127,45 +130,61 @@
 
     <div class="card">
         <div class="card-body">
-            <table class="table" id="table1">
-                <button type="button" class="btn btn-primary float-end ms-3 mt-2" id="btnShowForm">
-                    <i class="bi bi-person-plus-fill"></i>
-                </button>
-                <thead>
-                    <tr>
-                        <th>ID Transaksi</th>
-                        <th>Pelanggan</th>
-                        <th>Tanggal</th>
-                        <th>Barang</th>
-                        <th>Jumlah</th>
-                        <th>Total</th>
-                        <th>User</th>
-                        <th>Aksi</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php
-                    include './db_conn/koneksi.php';
-                    $query = mysqli_query($koneksi, "SELECT * FROM transaksi");
-                    while ($data = mysqli_fetch_array($query)) {
-                    ?>
-                        <tr>
-                            <td><?php echo $data['id_transaksi'] ?></td>
-                            <td><?php echo $data['id_pelanggan'] ?></td>
-                            <td><?php echo $data['tanggal'] ?></td>
-                            <td><?php echo $data['id_barang'] ?></td>
-                            <td><?php echo $data['jumlah'] ?></td>
-                            <td><?php echo $data['total'] ?></td>
-                            <td><?php echo $data['id_user'] ?></td>
-                            <td>
-                                <a href="page/cetak.php?id_transaksi=<?php echo $data['id_transaksi'] ?>" class="btn btn-info">Cetak</a>
-                                <button type="button" class="btn btn-danger"  onclick="Delete('db_conn/transaksi.php?aksi=delete&id_transaksi=<?php echo $data['id_transaksi'] ?>')">Hapus</button>
-                            </td>
-                        </tr>
+            <form action="" method="post" class="form-horizontal">
+                <table class="table" id="table1">
+                    <div class="row">
+                        <div class="col-12">
+                            <input type="date" name="tanggal_awal" class="col-sm-4 form-control">
+                            <input type="date" name="tanggal_akhir" class="col-sm-4 form-control">
 
-                    <?php } ?>
-                </tbody>
-            </table>
+                        </div>
+                    </div>
+                    <button type="submit" name="tampilkan" class="btn btn-info float-end ms-3 mt-2"><i class="bi bi-calendar2-week"></i></button>
+                    <button type="button" class="btn btn-primary float-end ms-3 mt-2" id="btnShowForm">
+                        <i class="bi bi-person-plus-fill"></i>
+                    </button>
+                    <thead>
+                        <tr>
+                            <th>ID Transaksi</th>
+                            <th>Pelanggan</th>
+                            <th>Tanggal</th>
+                            <th>Barang</th>
+                            <th>Jumlah</th>
+                            <th>Total</th>
+                            <th>User</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
+                        include './db_conn/koneksi.php';
+                        if (isset($_POST["tampilkan"])) {
+                            $tanggal_awal = $_POST['tanggal_awal'];
+                            $tanggal_akhir = $_POST['tanggal_akhir'];
+                            $query = mysqli_query($koneksi, "SELECT * FROM transaksi,barang WHERE transaksi.id_barang = barang.id_barang AND transaksi.tanggal BETWEEN '$tanggal_awal' AND '$tanggal_akhir' ");
+                        } else {
+                            $query = mysqli_query($koneksi, "SELECT * FROM transaksi,barang WHERE transaksi.id_barang = barang.id_barang");
+                        }
+                        while ($data = mysqli_fetch_array($query)) {
+                        ?>
+                            <tr>
+                                <td><?php echo $data['id_transaksi'] ?></td>
+                                <td><?php echo $data['id_pelanggan'] ?></td>
+                                <td><?php echo $data['tanggal'] ?></td>
+                                <td><?php echo $data['id_barang'] ?></td>
+                                <td><?php echo $data['jumlah'] ?></td>
+                                <td><?php echo $data['total'] ?></td>
+                                <td><?php echo $data['id_user'] ?></td>
+                                <td>
+                                    <a href="page/cetak.php?id_transaksi=<?php echo $data['id_transaksi'] ?>" class="btn btn-info">Cetak</a>
+                                    <button type="button" class="btn btn-danger" onclick="Delete('db_conn/transaksi.php?aksi=delete&id_transaksi=<?php echo $data['id_transaksi'] ?>')">Hapus</button>
+                                </td>
+                            </tr>
+
+                        <?php } ?>
+                    </tbody>
+                </table>
+            </form>
         </div>
     </div>
 

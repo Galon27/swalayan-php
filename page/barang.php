@@ -24,14 +24,13 @@
   </div>
 
   <section class="section">
-    <div class="card">
       <div class="card-header">
         <button type="button" class="btn btn-outline-primary block" data-bs-toggle="modal" data-bs-target="#backdrop">
           <i class="bi bi-folder-plus"></i> Tambah Barang
         </button>
       </div>
 
-      <div class="card-body">
+      <div class="card-body mt-4">
         <div class="row">
           <?php
           include './db_conn/koneksi.php';
@@ -46,7 +45,7 @@
                 <div class="col-sm-4">
                   <div class="card d-flex shadow-sm" id="card-bg">
                     <div class="card-header" id="card-bg">
-                      <h4 class="d-inline" style="color: white;"><?php echo $row['nama_barang'] ?></h4>
+                      <h4 class="d-inline"><?php echo $row['nama_barang'] ?></h4>
                       <p class="float-end d-inline" >Rp.<?php echo $row['harga'] ?></p>
                       <p class="position-absolute top-3 end-2">Stok : <?php echo $row['stok'] ?></p>
                     </div>

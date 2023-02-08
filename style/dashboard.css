@@ -2,10 +2,6 @@
     display: none;
 }
 
-#card-bg {
-    background-image: linear-gradient(to right, #2b5876 , #4e4376);
-}
-
 #card-bg #text {
     opacity: 0;
     max-height: 0;
