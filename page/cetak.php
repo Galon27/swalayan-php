@@ -77,7 +77,7 @@
             </tr>
             <tr>
                 <td>Subtotal</td>
-                <td class="text-end"><?= $data['total'] ?></td>
+                <td class="text-end"><?= "Rp." . $data['total'] ?></td>
             </tr>
             <tr>
                 <td>Pajak (10%)</td>

@@ -28,11 +28,11 @@ if ($_SESSION['status'] != "login") {
 
 </head>
 
-<body>
+<body style="overflow-x: hidden;">
     <script src="assets/js/initTheme.js"></script>
     <div id="main" class="layout-horizontal">
         <header class="mb-5">
-            <div class="header-top shadow-sm mt-3">
+            <div class="header-top shadow-sm mt-3"  style=" position: sticky; top: 0; z-index:1;">
                 <div class="container">
                     <div class="logo">
                     </div>
@@ -263,8 +263,6 @@ if ($_SESSION['status'] != "login") {
             })
         }
     </script>
-    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-    <lottie-player src="https://assets8.lottiefiles.com/packages/lf20_opea6x2q.json" background="transparent" speed="1" style="width: 2000px; height: 1000px; z-index:-10; position:absolute; top:0px; left:40px" loop autoplay></lottie-player>
 
     <script src="assets/js/bootstrap.js"></script>
     <script src="assets/js/app.js"></script>
@@ -280,3 +278,5 @@ if ($_SESSION['status'] != "login") {
 </body>
 
 </html>
+<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+<lottie-player src="https://assets8.lottiefiles.com/packages/lf20_opea6x2q.json" background="transparent" speed="1" style="width: 2000px; height: 1000px; z-index:-10; position:absolute; top:0px; left:30px" loop autoplay></lottie-player>

@@ -9,7 +9,7 @@
             ?>
             <div class="card-content p-4">
                 <input type="text" name="id_barang" id="" value="<?php echo $d['id_barang'] ?>" hidden>
-                <img id="blah" src="gambar/<?php echo $d['gambar'] ?>" class="rounded w-100" />
+                <img id="blah" src="gambar/<?php echo $d['gambar'] ?>" class="rounded-3" style="width:100%; height:423px" />
                 <div class="card-body">
                     <h4 class="d-inline" style="color: white;"><?php echo $d['nama_barang'] ?></h4>
                     <p class="float-end d-inline">Rp.<?php echo $d['harga'] ?></p>
