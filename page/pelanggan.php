@@ -38,6 +38,7 @@
               <th>Jenis Kelamin</th>
               <th>Alamat</th>
               <th>No HP</th>
+              <th>Aksi</th>
             </tr>
           </thead>
           <tbody>
@@ -54,9 +55,9 @@
                 <td><?php echo $data['no_hp'] ?></td>
                 <td>
                   <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#edit<?php echo $data['id_pelanggan'] ?>">
-                    Edit
+                    <i class="bi bi-person-check"></i>
                   </button>
-                  <button type="button" class="btn btn-danger" onclick="Delete('db_conn/pelanggan.php?aksi=delete&id_pelanggan=<?php echo $data['id_pelanggan'] ?>')">Hapus</button>
+                  <button type="button" class="btn btn-danger" onclick="Delete('db_conn/pelanggan.php?aksi=delete&id_pelanggan=<?php echo $data['id_pelanggan'] ?>')"><i class="bi bi-trash3"></i></button>
                 </td>
               </tr>
 

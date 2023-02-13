@@ -1,5 +1,10 @@
-::-webkit-scrollbar{
+::-webkit-scrollbar {
     display: none;
+}
+
+#tes {
+    background: linear-gradient(135deg, transparent 0%, transparent 8%, rgba(255, 255, 255, 0.03) 30%, rgba(255, 255, 255, 0.03) 60%, rgba(255, 255, 255, 0) 68%);
+    backdrop-filter: blur(2px);
 }
 
 #card-bg #text {
@@ -13,6 +18,7 @@
     opacity: 1;
     max-height: 33px;
 }
+
 /* 
 #thumb {
     display: none;

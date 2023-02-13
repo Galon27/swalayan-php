@@ -32,7 +32,7 @@ if ($_SESSION['status'] != "login") {
     <script src="assets/js/initTheme.js"></script>
     <div id="main" class="layout-horizontal">
         <header class="mb-5">
-            <div class="header-top shadow-sm mt-3"  style=" position: sticky; top: 0; z-index:1;">
+            <div class="header-top shadow-sm mt-3" style=" position: sticky; top: 0; z-index:1;">
                 <div class="container">
                     <div class="logo">
                     </div>
@@ -97,7 +97,11 @@ if ($_SESSION['status'] != "login") {
                     <div class="sidebar-header position-relative">
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="logo fs-2">
-                                <a href="index.html"><i class="bi bi-shop"></i> Swalayan</a>
+                                <span class="badge bg-primary h-100 pt-0">
+                                    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+                                    <lottie-player src="https://assets3.lottiefiles.com/packages/lf20_yC6QZy5Cnc.json" background="transparent" speed="1" class="pb-0" loop autoplay></lottie-player> 
+                                    Swalayan.
+                                </span>
                             </div>
                             <hr class="dropdown-divider" />
                             <div class="sidebar-toggler  x">
@@ -106,6 +110,7 @@ if ($_SESSION['status'] != "login") {
                         </div>
                     </div>
 
+                    <hr class="mx-4">
                     <div class="sidebar-menu">
                         <ul class="menu">
                             <li class="sidebar-title">Menu</li>
@@ -121,7 +126,7 @@ if ($_SESSION['status'] != "login") {
                                 ?> class="sidebar-item">
                                 <a href="admin.php?page=dashboard" class='sidebar-link'>
                                     <i class="bi bi-grid-fill"></i>
-                                    <span>Dashboard</span>
+                                    <span>| Dashboard</span>
                                 </a>
                             </li>
 
@@ -136,7 +141,7 @@ if ($_SESSION['status'] != "login") {
                                 ?> class="sidebar-item">
                                 <a href="admin.php?page=transaksi" class='sidebar-link'>
                                     <i class="bi bi-cart4"></i>
-                                    <span>Transaksi</span>
+                                    <span>| Transaksi</span>
                                 </a>
                             </li>
 
@@ -151,7 +156,7 @@ if ($_SESSION['status'] != "login") {
                                 ?> class="sidebar-item ">
                                 <a href="admin.php?page=user" class='sidebar-link'>
                                     <i class="bi bi-people-fill"></i>
-                                    <span>User</span>
+                                    <span>| User</span>
                                 </a>
                             </li>
 
@@ -166,7 +171,7 @@ if ($_SESSION['status'] != "login") {
                                 ?> class="sidebar-item ">
                                 <a href="admin.php?page=pelanggan" class='sidebar-link'>
                                     <i class="bi bi-person-bounding-box"></i>
-                                    <span>Pelanggan</span>
+                                    <span>| Pelanggan</span>
                                 </a>
                             </li>
 
@@ -175,18 +180,18 @@ if ($_SESSION['status'] != "login") {
                                     $page = $_GET['page'];
                                     switch ($page) {
                                         case 'barang';
-                                            echo 'class="sidebar-item active"';
+                                            echo 'class="sidebar-item active';
                                     }
                                 }
                                 ?> class="sidebar-item">
                                 <a href="admin.php?page=barang" class='sidebar-link'>
                                     <i class="bi bi-box-seam-fill"></i>
-                                    <span>Barang</span>
+                                    <span>| Barang</span>
                                 </a>
                             </li>
 
                             <li class="sidebar-item">
-                                <a href="admin.php?page=transaksi_barang" class='sidebar-link' disable>
+                                <a href="admin.php?page=transaksi_barang" class='sidebar-link' disable hidden>
                                 </a>
                             </li>
 
@@ -235,6 +240,22 @@ if ($_SESSION['status'] != "login") {
                     </a>
                 </header>
 
+                <footer>
+                    <div class="footer clearfix mb-0 text-muted">
+                        <div class="float-start">
+                            <p>2021 &copy; Mazer</p>
+                        </div>
+                        <div class="float-end">
+                            <p>
+                                Crafted with
+                                <span class="text-danger"><i class="bi bi-heart"></i></span> by
+                                <a href="https://saugi.me">Saugi</a>
+                            </p>
+                        </div>
+                    </div>
+                </footer>
+
+
             </div>
     </div>
 
@@ -249,15 +270,15 @@ if ($_SESSION['status'] != "login") {
                 showCancelButton: true,
                 confirmButtonColor: '#3085d6',
                 cancelButtonColor: '#d33',
-                confirmButtonText: 'Yes, delete it!'
+                confirmButtonText: 'Yes, do it!'
             }).then((result) => {
                 if (result.isConfirmed) {
-                    window.location.href = url;
                     Swal.fire(
                         'Berhasil!',
                         'Log Out telah berhasil.',
                         'success',
                     )
+                    window.location.href = url;
                 }
 
             })

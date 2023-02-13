@@ -172,8 +172,8 @@
                             <td><?php echo $data['total'] ?></td>
                             <td><?php echo $data['id_user'] ?></td>
                             <td>
-                                <a href="page/cetak.php?id_transaksi=<?php echo $data['id_transaksi'] ?>" class="btn btn-info">Cetak</a>
-                                <button type="button" class="btn btn-danger" onclick="Delete('db_conn/transaksi.php?aksi=delete&id_transaksi=<?php echo $data['id_transaksi'] ?>')">Hapus</button>
+                                <a href="page/cetak.php?id_transaksi=<?php echo $data['id_transaksi'] ?>" class="btn btn-success"><i class="bi bi-printer"></i></a>
+                                <button type="button" class="btn btn-danger" onclick="Delete('db_conn/transaksi.php?aksi=delete&id_transaksi=<?php echo $data['id_transaksi'] ?>')"><i class="bi bi-trash3"></i></button>
                             </td>
                         </tr>
 

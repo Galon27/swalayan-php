@@ -27,7 +27,7 @@
 
   <section class="section">
     <div class="card-header">
-      <button type="button" class="btn btn-outline-primary block" data-bs-toggle="modal" data-bs-target="#backdrop">
+      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#backdrop">
         <i class="bi bi-folder-plus"></i> Tambah Barang
       </button>
     </div>
@@ -60,14 +60,14 @@
                       </div>
                     </div>
 
-                    <div class="d-flex justify-contect-between p-2">
-                      <button type="button" class="btn btn-warning col-3 ms-1" id="text" data-bs-toggle="modal" data-bs-target="#edit<?php echo $row['id_barang'] ?>">
+                    <div class="d-flex justify-contect-between pt-2 pb-2">
+                      <button type="button" class="btn btn-warning col-3 me-2" id="text" data-bs-toggle="modal" data-bs-target="#edit<?php echo $row['id_barang'] ?>">
                         <i class="bi bi-pencil-square"></i>
                       </button>
                       <button type="button" class="btn btn-danger col-3 me-4" id="text" onclick="Delete('db_conn/barang.php?aksi=delete&id_barang=<?php echo $row['id_barang'] ?>')">
                         <i class="bi bi-trash3-fill"></i>
                       </button>
-                      <a href="admin.php?page=transaksi_barang&id_barang=<?php echo $row['id_barang'] ?>" class="btn btn-primary col-3 me-5" id="text"><i class="bi bi-cart-plus-fill"></i></a>
+                      <a href="admin.php?page=transaksi_barang&id_barang=<?php echo $row['id_barang'] ?>" class="btn btn-primary icon icon-left" id="text"><i class="bi bi-cart-plus-fill"></i> Order</a>
                     </div>
                   </div>
 

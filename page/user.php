@@ -1,28 +1,28 @@
 <div class="page-heading">
-<div class="page-title">
-        <div class="row">
-            <div class="col-12 me-3 order-md-2 order-first">
-                <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item">
-                            <a href="index.html">Dashboard</a>
-                        </li>
-                        <li class="breadcrumb-item active" aria-current="page">
-                            Data User
-                        </li>
-                    </ol>
-                </nav>
-            </div>
-        </div>
-        <div class="col-12 order-md-1 order-last">
-            <div class="card shadow">
-                <h3 class="pb-3 pt-4 ps-3">Data Peruseran.</h3>
-                <div class="col-sm-2 d-inline">
-
-                </div>
-            </div>
-        </div>
+  <div class="page-title">
+    <div class="row">
+      <div class="col-12 me-3 order-md-2 order-first">
+        <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+              <a href="index.html">Dashboard</a>
+            </li>
+            <li class="breadcrumb-item active" aria-current="page">
+              Data User
+            </li>
+          </ol>
+        </nav>
+      </div>
     </div>
+    <div class="col-12 order-md-1 order-last">
+      <div class="card shadow">
+        <h3 class="pb-3 pt-4 ps-3">Data Peruseran.</h3>
+        <div class="col-sm-2 d-inline">
+
+        </div>
+      </div>
+    </div>
+  </div>
   <section class="section">
     <div class="card shadow">
       <div class="card-body">
@@ -37,7 +37,8 @@
               <th>Nama</th>
               <th>Username</th>
               <th>Jenis Kelamin</th>
-              <th colspan="2">No HP</th>
+              <th>No HP</th>
+              <th>Aksi</th>
             </tr>
           </thead>
           <tbody>
@@ -56,9 +57,9 @@
                 <td><?php echo $d['no_hp']; ?></td>
                 <td>
                   <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#edit<?php echo $d['id_user'] ?>">
-                    Edit
+                    <i class="bi bi-person-check"></i>
                   </button>
-                  <button type="button" class="btn btn-danger" onclick="Delete('db_conn/user.php?aksi=delete&id_user=<?php echo $d['id_user'] ?>')">Hapus</button>
+                  <button type="button" class="btn btn-danger" onclick="Delete('db_conn/user.php?aksi=delete&id_user=<?php echo $d['id_user'] ?>')"><i class="bi bi-trash3"></i></button>
                 </td>
               </tr>
             <?php } ?>

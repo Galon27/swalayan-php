@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Dongle:wght@300;400;700&family=Montserrat:wght@400;500;700&family=Orbitron&family=Prompt:wght@400;500;700&display=swap");
 
 :root {
-  --color-p: #3a5cd1;
+  --color-p: #21CECC;
   --color-white: #fff;
   --color-light-gray: #eff2f5;
   --color-mid-gray: #96a0b5;
@@ -13,11 +13,6 @@
 ::-webkit-scrollbar{
     display: none;
   }
-
-lottie-player {
-  position: absolute;
-  top: 40%;
-}
 
 .grid-container {
   display: grid;

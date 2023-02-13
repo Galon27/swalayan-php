@@ -107,17 +107,15 @@
 
 
                 <div class="card-footer">
-                    <button type="reset" class="btn btn-warning">Reset</button></button>
-                    <a href="javascript:history.back()" class="btn btn-info">Kembali</a>
-                    <button type="submit" class="btn btn-primary float-right">Simpan</button>
+                    <a href="javascript:history.back()" class="btn btn-info col-3"><i class="bi bi-arrow-left-square"></i> Back</a>
+                    <button type="reset" class="btn btn-warning col-3"><i class="bi bi-arrow-repeat"></i> Reset</button>
+                    <button type="submit" class="btn btn-primary float-right col-3"><i class="bi bi-save"></i> Save</button>
                 </div>
                 </form>
             </div>
         </div>
     </div>
 </div>
-
-
 
 <script>
     function hitung() {
